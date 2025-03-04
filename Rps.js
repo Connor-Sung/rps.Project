@@ -7,19 +7,29 @@
 6. Declare winner
 */
 
-// function randomLessThan(num) {
-//     return(Math.floor(Math.random() * num));
-// }
-// randomLessThan(3);
-
-// console.log (randomLessThan(3) + 1);
-
-// let Rock = 1
-// let Paper = 2
-// let Scissors = 3
-
-+prompt("Rock, Paper, or Scissors?")
-
-if (prompt = "Rock") {
-    
+function randomlessthan(num){
+    return(Math.floor(Math.random() * num));
 }
+
+// let
+
+let player;
+
+player = prompt("Rock, Paper, or Scissors?");
+console.log(`Player choose ${player}`);
+
+
+if (player == "Rock") {
+    console.log(randomlessthan(3) + 1);
+};
+
+if (player == "Paper") {
+    console.log(randomlessthan(3) + 1);
+};
+
+if (player == "Scissors") {
+    console.log(randomlessthan(3) + 1);
+};
+if (!player == "Rock, Paper, Scissors") {
+    prompt("Rock, Paper, or Scissors");
+};
