@@ -6,20 +6,15 @@
 5. Input Rock beats Scissors, Paper beats Rock, Scissors beats Paper, or Draw
 6. Declare winner
 */
+let player;
+let ScoreboardPlayer = 0 
+let ScoreboardComputer = 0
+
+while (ScoreboardComputer < 5 || ScoreboardPlayer < 5){
 
 function randomlessthan(num){
     return (Math.floor(Math.random() * num))};
 
-   
-
-let player;
-
-let ScoreboardPlayer = 0 
-let ScoreboardComputer = 0
-
-// while (!player == "ROCK" || !player == "PAPER" || !player == "SCISSORS"){
-//     prompt("Rock, Paper, or Scissors");
-// };
 player = prompt("Rock, Paper, or Scissors?");
 console.log(`Player choose ${player}`);
 player = player.toUpperCase()
@@ -34,7 +29,7 @@ if (choice == 2){
 if (choice == 3){
     console.log("Computer choose Scissor")
 }
-while (ScoreboardComputer < 5 || ScoreboardPlayer < 5){
+
     if (player == "ROCK" && choice == 3) {
         console.log("Player won. Rock beats scissors")
         ScoreboardPlayer = ScoreboardPlayer + 1;
@@ -68,7 +63,6 @@ while (ScoreboardComputer < 5 || ScoreboardPlayer < 5){
     if (player == "PAPER" && choice == 3) {
         console.log("CPU won. Scissors beats Paper")
         ScoreboardComputer = ScoreboardComputer + 1;
-        console.log(ScoreboardComputer);
     }
     
     if (player == "SCISSORS" && choice == 3) {
@@ -88,25 +82,25 @@ while (ScoreboardComputer < 5 || ScoreboardPlayer < 5){
         ScoreboardComputer = ScoreboardComputer + 1;
         console.log(ScoreboardComputer);
     }
-    continue;
-    }
 
-if (player == "ROCK") {
-    console.log(choice);
+if (player != "ROCK" && player != "PAPER" && player != "SCISSORS"){
+    alert("This is not a prompt option. Now I'll not work");
+    break;
 };
 
-if (player == "PAPER") {
-    console.log(choice);
-};
-
-if (player == "SCISSORS") {
-    console.log(choice);
-};
-
-//END LOOP WHEN EITHER PLAYER GETS 5
 if (ScoreboardPlayer >= 5) {
-    alert("Player has won")
+    alert("Player has won");
+    break;
 }
 if (ScoreboardComputer >= 5) {
-    alert("You lost to predetermined moves from a BOT. SKILL ISSUE")
-}
+    alert("You lost to predetermined moves from a BOT. SKILL ISSUE");
+    break;
+};
+
+if (ScoreboardComputer < 5) {
+    alert(`CPU has ${ScoreboardComputer}`);
+};
+if (ScoreboardPlayer < 5) {
+    alert(`Player has ${ScoreboardPlayer}`);
+};
+};
